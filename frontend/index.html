@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BioNucle - Medical Identity Module</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00f0ff","primary-dark": "#00a0aa", 
+              "accent-silver": "#e0e6ed","background-light": "#f0f4f8",
+              "background-dark": "#1a1f2e","surface-dark": "#252b3d",},
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            animation: {
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'spin-slow': 'spin 8s linear infinite',
+            },
+            backgroundImage: {
+                'metal-gradient': 'linear-gradient(135deg, #e0e6ed 0%, #aab2bd 50%, #e0e6ed 100%)',
+                'dark-metal': 'linear-gradient(135deg, #252b3d 0%, #1a1f2e 100%)',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      .glass-panel {
+          background: rgba(37, 43, 61, 0.4);
+          backdrop-filter: blur(16px);
+          border: 1px solid rgba(224, 230, 237, 0.15);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      }
+      .glass-shield {
+          background: rgba(0, 240, 255, 0.03);
+          backdrop-filter: blur(12px);
+          box-shadow: 0 0 50px rgba(0, 240, 255, 0.1), inset 0 0 30px rgba(0, 240, 255, 0.05);
+          border: 1px solid rgba(224, 230, 237, 0.2);
+      }
+      .text-chrome {
+          background: linear-gradient(to bottom, #ffffff 0%, #c0c9d6 50%, #8a96a8 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+      }
+      body {
+        min-height: 100vh;
+        margin: 0;
+      }
+      #root {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body class="bg-background-dark font-display text-accent-silver antialiased overflow-hidden selection:bg-primary selection:text-background-dark dark">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
